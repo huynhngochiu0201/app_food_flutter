@@ -46,23 +46,89 @@ class _IntroducePageState extends State<IntroducePage> {
                   topRight: Radius.circular(20.0),
                 ),
               ),
-            ),
+              child: ListView(
+                children: [
+                  Text(
+                    widget.user.name ?? '',
+                    style: const TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.blue),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ), 
           ),
-           Positioned(
+          Positioned(
             top: 168 / 2 - 35,
-            left: MediaQuery.of(context).size.width /2 -35,// Dùng MediaQuery.of(context).size.width /2 -35 để canh chỉnh ảnh vào giữa
+            left: MediaQuery.of(context).size.width / 2 -
+                35, // Dùng MediaQuery.of(context).size.width /2 -35 để canh chỉnh ảnh vào giữa
             // right: 0.0,
             child: CircleAvatar(
-              radius: 35.0 ,
+              radius: 35.0,
               backgroundColor: Colors.white,
               child: CircleAvatar(
                 radius: 33.0,
-                backgroundImage: Image.asset(widget.user.avatar ?? '' ,fit: BoxFit.contain,).image, //StatefulWidget là phải có Widget
+                backgroundImage: Image.asset(
+                  widget.user.avatar ?? '',
+                  fit: BoxFit.contain,
+                ).image, //StatefulWidget là phải có Widget
               ),
             ),
-          )
+          ),
+          const Positioned(
+            right: 22.0,
+            bottom: 0,
+            child: Row(
+              children: [
+                customStar(
+                  icon: 'assets/icon/Frame1sao.svg',
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                customStar(
+                  icon: 'assets/icon/HeartStraight.svg',
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            width: 10.0,
+          ),
         ],
       ),
+    );
+  }
+}
+
+// ignore: camel_case_types
+class customStar extends StatelessWidget {
+  const customStar({
+    super.key,
+    required this.icon,
+  });
+  final String icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.25),
+            offset: const Offset(0.0, 0.0),
+            blurRadius: 10.0,
+            spreadRadius: 0,
+          ),
+        ],
+      ),
+      child: SvgPicture.asset(icon),
     );
   }
 }

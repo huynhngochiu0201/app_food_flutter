@@ -57,7 +57,7 @@ UserModel user1 = UserModel()
 
 UserModel user2 = UserModel()
   ..id = '2'
-  ..name = "Huy02"
+  ..name = "Hiu Food"
   ..avatar = 'assets/images/food3.jpg'
   ..couverture =
       'assets/images/food4.jpg'
@@ -79,7 +79,7 @@ UserModel user2 = UserModel()
 
 UserModel user3 = UserModel()
   ..id = '3'
-  ..name = "Huy04"
+  ..name = "Buốn Bò Huế"
   ..avatar = 'assets/images/food5.jpg'
   ..couverture =
       'assets/images/food6.jpg'

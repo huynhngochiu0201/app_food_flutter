@@ -54,7 +54,7 @@ List<PostModel> posts = [
   PostModel()
     ..id = '4'
     ..user = user2
-    ..cuisineType = 'Tay Nguyen'
+    ..cuisineType = 'Ha Noi'
     ..rate = 5.0
     ..location = locationUser1
     ..description =
@@ -66,10 +66,10 @@ List<PostModel> posts = [
   PostModel()
     ..id = '5'
     ..user = user2
-    ..cuisineType = 'Ha Noi'
+    ..cuisineType = 'Tay Nguyen'
     ..rate = 4.0
     ..location = locationUser2
-    ..description = 'bbbbbcccc'
+    ..description = 'Danh sách món ngon Hà Nội nhiều vô số kể. Dù bắt đầu hành trình khám phá ẩm thực Hà vào buổi sáng, buổi trưa, buổi chiều hay... giữa đêm khuya, bạn vẫn sẽ có được trải nghiệm vẹn tròn "hương - vị - sắc".'
     ..image = [
     'assets/images/food2.jpg',
     ],
